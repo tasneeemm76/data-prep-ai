@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Preprocessing</title>
+    <style>
+    
+    /* Global Styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Arial', sans-serif;
+    }
+
+    body {
+        background-color: #f4f7f6;
+        color: #333;
+        font-size: 16px;
+        line-height: 1.5;
+        padding: 20px;
+    }
+
+    h1, h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    p, ul {
+        font-size: 1.1em;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    ul {
+        list-style-type: square;
+        margin-left: 20px;
+    }
+
+    /* Form Styles */
+    form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    form label {
+        font-size: 1.1em;
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    form input[type="file"] {
+        font-size: 1.1em;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    form input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 15px 20px;
+        font-size: 1.2em;
+        cursor: pointer;
+        border-radius: 6px;
+        width: 100%;
+        transition: background-color 0.3s;
+    }
+
+    form input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+
+    /* Processing Log Styles */
+    #logDetails {
+        background-color: #fafafa;
+        border: 1px solid #ccc;
+        padding: 15px;
+        border-radius: 6px;
+        max-height: 300px;
+        overflow-y: auto;
+        margin-bottom: 30px;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
+
+    /* Download Link Styles */
+    #downloadLink {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    #downloadLink a {
+        color: #007bff;
+        font-size: 1.2em;
+        text-decoration: none;
+        border-bottom: 2px solid #007bff;
+        transition: color 0.3s, border-bottom 0.3s;
+    }
+
+    #downloadLink a:hover {
+        color: #0056b3;
+        border-bottom: 2px solid #0056b3;
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+        h1, h2 {
+            font-size: 1.8em;
+        }
+
+        form {
+            width: 90%;
+            padding: 15px;
+        }
+
+        form input[type="submit"] {
+            font-size: 1.1em;
+        }
+    }
+
+
+    </style>
+</head>
+<body>
+    <p>
+        In this section, the application takes your uploaded dataset and applies more advanced preprocessing steps using AI techniques. These steps include:
+    </p>
+    <ul>
+        <li>Feature scaling (Standardization/Normalization) to ensure consistency in numeric data</li>
+        <li>Handling outliers based on statistical methods</li>
+        <li>Feature selection and engineering to choose the most relevant features for analysis</li>
+        <li>Splitting the data into training and testing sets for machine learning models</li>
+        <li>Addressing class imbalance using resampling methods</li>
+        <li>Data type conversion for proper processing of various feature types</li>
+    </ul>
+    <p>
+        After preprocessing, you will receive a log of the actions taken, and you can download the processed dataset for use in your machine learning models or analysis tasks.
+    </p>
+    
+    <h1>Upload Your Dataset for AI-driven Preprocessing</h1>
+    <form action="/upload_x" method="post" enctype="multipart/form-data">
+        <label for="file">Choose CSV file to upload:</label>
+        <input type="file" name="file" accept=".csv" required><br><br>
+        
+        <input type="submit" value="Upload and Process">
+    </form>
+    
+    <h2>Processing Log</h2>
+    <pre id="logDetails"></pre>
+
+    <div id="downloadLink" style="display: none;">
+        <h2>Download Processed Data</h2>
+        <a id="downloadFileLink" href="" download>Download Processed File</a>
+    </div>
+
+    <script>
+        const form = document.querySelector('form');
+        form.onsubmit = async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            const response = await fetch('/upload_x', {
+                method: 'POST',
+                body: formData
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                document.getElementById('logDetails').textContent = result.log;
+                document.getElementById('downloadFileLink').href = result.download_link;
+                document.getElementById('downloadLink').style.display = 'block';
+            } else {
+                document.getElementById('logDetails').textContent = `Error: ${result.error}`;
+            }
+        };
+    </script>
+</body>
+</html>

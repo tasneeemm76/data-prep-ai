@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Preprocessing App</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+    
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            font-size: 16px;
+            line-height: 1.6;
+            padding: 20px;
+        }
+    
+        h1, h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #2d3e50;
+        }
+    
+        p, ul {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+    
+        ul {
+            list-style-type: square;
+            margin-left: 20px;
+        }
+    
+        /* Form Styles */
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    
+        form label {
+            font-size: 1.1em;
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+    
+        form input[type="file"] {
+            font-size: 1.1em;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    
+        form input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 15px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 6px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+    
+        form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    
+        /* Processing Log Styles */
+        #logDetails {
+            background-color: #fafafa;
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 6px;
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 30px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    
+        /* Download Link Styles */
+        #downloadLink {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+    
+        #downloadLink a {
+            color: #007bff;
+            font-size: 1.2em;
+            text-decoration: none;
+            border-bottom: 2px solid #007bff;
+            transition: color 0.3s, border-bottom 0.3s;
+        }
+    
+        #downloadLink a:hover {
+            color: #0056b3;
+            border-bottom: 2px solid #0056b3;
+        }
+    
+        /* More Pre-processing Button Styles */
+        form button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 15px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 6px;
+            width: 100%;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+    
+        form button:hover {
+            background-color: #218838;
+        }
+    
+        /* Media Queries */
+        @media (max-width: 768px) {
+            h1, h2 {
+                font-size: 1.8em;
+            }
+    
+            form {
+                width: 90%;
+                padding: 15px;
+            }
+    
+            form input[type="submit"], form button {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>Automatic Data preprocessing </h1>
+    <p>
+        Welcome to the Data Preprocessing App!<br>
+         This tool helps you clean and prepare your dataset for further analysis or machine learning models.
+        Simply upload your CSV file, and the app will automatically handle tasks like:
+    </p>
+    <ul>
+        <li>Identifying and filling missing values</li>
+        <li>Encoding categorical data</li>
+        <li>Removing duplicate rows</li>
+        <li>Scaling numeric features</li>
+        <li>Handling inconsistent data types</li>
+    </ul>
+    <p>
+        After processing, you can download the cleaned dataset and use it for further analysis. Additionally, you can visit the "More Pre-processing" page for advanced AI-driven preprocessing options.
+    </p>
+    
+    <h1>Upload Your Dataset for Processing</h1>
+    
+    <!-- Form for uploading file -->
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="file">Choose CSV file to upload:</label>
+        <input type="file" name="file" accept=".csv" required><br><br>
+        
+        <input type="submit" value="Upload and Process">
+    </form>
+    
+    <h2>Processing Log</h2>
+    <pre>{{ log_details if log_details else "No logs available" }}</pre>
+    
+    <!-- Download Link Section -->
+    {% if download_link %}
+    <div>
+        <h2>Download Processed Data</h2>
+        <a href="{{ download_link }}" download>Download Processed File</a>
+    </div>
+    {% endif %}
+    
+    <br><br>
+    <form action="/more_processing" method="get">
+        <button type="submit">More Pre-processing</button>
+    </form>
+</body>
+</html>

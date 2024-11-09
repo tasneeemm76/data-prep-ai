@@ -1,0 +1,171 @@
+2024-11-09 20:22:24,437 -  * Debugger is active!
+2024-11-09 20:22:24,439 -  * Debugger PIN: 832-437-870
+2024-11-09 20:22:43,527 - 127.0.0.1 - - [09/Nov/2024 20:22:43] "GET / HTTP/1.1" 200 -
+2024-11-09 20:22:49,993 - Uploaded file 'cards_data.csv' with 13 columns and 6146 rows.
+Starting preprocessing...
+Number of columns: 13
+Column data types:
+id                        int64
+client_id                 int64
+card_brand               object
+card_type                object
+card_number               int64
+expires                  object
+cvv                       int64
+has_chip                 object
+num_cards_issued          int64
+credit_limit             object
+acct_open_date           object
+year_pin_last_changed     int64
+card_on_dark_web         object
+dtype: object
+
+Scaled numeric columns: ['id', 'client_id', 'card_number', 'cvv', 'num_cards_issued', 'year_pin_last_changed']
+Encoded categorical columns: ['card_brand', 'card_type', 'expires', 'has_chip', 'credit_limit', 'acct_open_date', 'card_on_dark_web']
+Preprocessing completed.
+
+2024-11-09 20:22:50,216 - 127.0.0.1 - - [09/Nov/2024 20:22:50] "POST /upload HTTP/1.1" 200 -
+2024-11-09 20:25:40,098 -  * Detected change in 'C:\\data_preprocessing\\app.py', reloading
+2024-11-09 20:25:42,174 -  * Debugger is active!
+2024-11-09 20:25:42,176 -  * Debugger PIN: 832-437-870
+2024-11-09 20:25:58,821 - 127.0.0.1 - - [09/Nov/2024 20:25:58] "GET / HTTP/1.1" 200 -
+2024-11-09 20:26:05,344 - Uploaded file 'cards_data.csv' with 13 columns and 6146 rows.
+Starting preprocessing...
+Number of columns: 13
+Column data types:
+id                        int64
+client_id                 int64
+card_brand               object
+card_type                object
+card_number               int64
+expires                  object
+cvv                       int64
+has_chip                 object
+num_cards_issued          int64
+credit_limit             object
+acct_open_date           object
+year_pin_last_changed     int64
+card_on_dark_web         object
+dtype: object
+
+Scaled numeric columns: ['id', 'client_id', 'card_number', 'cvv', 'num_cards_issued', 'year_pin_last_changed']
+Encoded categorical columns: ['card_brand', 'card_type', 'expires', 'has_chip', 'credit_limit', 'acct_open_date', 'card_on_dark_web']
+Preprocessing completed.
+Processed file saved as cards_data_processed.csv
+
+2024-11-09 20:26:05,541 - 127.0.0.1 - - [09/Nov/2024 20:26:05] "POST /upload HTTP/1.1" 200 -
+2024-11-09 20:26:18,004 - 127.0.0.1 - - [09/Nov/2024 20:26:18] "GET /download/cards_data_processed.csv HTTP/1.1" 200 -
+2024-11-09 20:28:12,703 - 127.0.0.1 - - [09/Nov/2024 20:28:12] "GET / HTTP/1.1" 200 -
+2024-11-09 20:29:24,882 - 127.0.0.1 - - [09/Nov/2024 20:29:24] "GET / HTTP/1.1" 200 -
+2024-11-09 20:30:09,572 - 127.0.0.1 - - [09/Nov/2024 20:30:09] "GET / HTTP/1.1" 200 -
+2024-11-09 20:31:09,622 - Uploaded file 'uncleaned bike sales data.csv' with 19 columns and 89 rows.
+Starting preprocessing...
+Number of columns: 19
+Column data types:
+Sales_Order #            int64
+Date                    object
+Day                    float64
+Month                   object
+Year                     int64
+Customer_Age             int64
+Age_Group               object
+Customer_Gender         object
+Country                 object
+State                   object
+Product_Category        object
+Sub_Category            object
+Product_Description     object
+Order_Quantity         float64
+ Unit_Cost              object
+ Unit_Price             object
+ Profit                 object
+ Cost                   object
+Revenue                 object
+dtype: object
+
+Scaled numeric columns: ['Sales_Order #', 'Day', 'Year', 'Customer_Age', 'Order_Quantity']
+Encoded categorical columns: ['Date', 'Month', 'Age_Group', 'Customer_Gender', 'Country', 'State', 'Product_Category', 'Sub_Category', 'Product_Description', ' Unit_Cost ', ' Unit_Price ', ' Profit ', ' Cost ', 'Revenue']
+Preprocessing completed.
+Processed file saved as uncleaned bike sales data_processed.csv
+
+2024-11-09 20:31:09,648 - 127.0.0.1 - - [09/Nov/2024 20:31:09] "POST /upload HTTP/1.1" 200 -
+2024-11-09 20:33:49,618 -  * Detected change in 'C:\\data_preprocessing\\app.py', reloading
+2024-11-09 20:33:51,662 -  * Debugger is active!
+2024-11-09 20:33:51,664 -  * Debugger PIN: 832-437-870
+2024-11-09 20:34:08,983 - 127.0.0.1 - - [09/Nov/2024 20:34:08] "GET / HTTP/1.1" 200 -
+2024-11-09 20:35:20,489 -  * Detected change in 'C:\\data_preprocessing\\app.py', reloading
+2024-11-09 20:35:22,155 -  * Debugger is active!
+2024-11-09 20:35:22,156 -  * Debugger PIN: 832-437-870
+2024-11-09 20:35:42,103 - 127.0.0.1 - - [09/Nov/2024 20:35:42] "GET / HTTP/1.1" 200 -
+2024-11-09 20:36:59,649 - 127.0.0.1 - - [09/Nov/2024 20:36:59] "GET / HTTP/1.1" 200 -
+2024-11-09 20:37:08,706 - Failed to read file: Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.
+2024-11-09 20:37:08,707 - 127.0.0.1 - - [09/Nov/2024 20:37:08] "[31m[1mPOST /upload HTTP/1.1[0m" 400 -
+2024-11-09 20:37:35,218 -  * Detected change in 'C:\\data_preprocessing\\app.py', reloading
+2024-11-09 20:37:37,212 -  * Debugger is active!
+2024-11-09 20:37:37,214 -  * Debugger PIN: 832-437-870
+2024-11-09 20:37:39,418 - 127.0.0.1 - - [09/Nov/2024 20:37:39] "GET / HTTP/1.1" 200 -
+2024-11-09 20:37:45,582 - Failed to read file: Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.
+2024-11-09 20:37:45,583 - 127.0.0.1 - - [09/Nov/2024 20:37:45] "[31m[1mPOST /upload HTTP/1.1[0m" 400 -
+2024-11-09 20:39:45,670 -  * Detected change in 'C:\\data_preprocessing\\app.py', reloading
+2024-11-09 20:39:47,968 -  * Debugger is active!
+2024-11-09 20:39:47,970 -  * Debugger PIN: 832-437-870
+2024-11-09 20:39:54,144 - 127.0.0.1 - - [09/Nov/2024 20:39:54] "GET / HTTP/1.1" 200 -
+2024-11-09 20:40:02,139 - Uploaded file 'uncleaned bike sales data.csv' with 19 columns and 89 rows.
+Starting preprocessing...
+Missing values found in the following columns: ['Day', 'Age_Group', 'Product_Description', 'Order_Quantity']
+Missing values filled.
+No inconsistent data types detected.
+No duplicate rows detected.
+Scaled numeric columns: ['Sales_Order #', 'Day', 'Year', 'Customer_Age', 'Order_Quantity']
+Encoded categorical columns: ['Date', 'Month', 'Age_Group', 'Customer_Gender', 'Country', 'State', 'Product_Category', 'Sub_Category', 'Product_Description', ' Unit_Cost ', ' Unit_Price ', ' Profit ', ' Cost ', 'Revenue']
+Preprocessing completed.
+Processed file saved as uncleaned bike sales data_processed.csv
+
+2024-11-09 20:40:02,180 - 127.0.0.1 - - [09/Nov/2024 20:40:02] "POST /upload HTTP/1.1" 200 -
+2024-11-09 20:46:35,409 -  * Detected change in 'C:\\data_preprocessing\\app.py', reloading
+2024-11-09 20:46:37,107 -  * Debugger is active!
+2024-11-09 20:46:37,109 -  * Debugger PIN: 832-437-870
+2024-11-09 20:47:15,342 - 127.0.0.1 - - [09/Nov/2024 20:47:15] "GET / HTTP/1.1" 200 -
+2024-11-09 20:47:30,684 - Uploaded file 'uncleaned bike sales data.csv' with 19 columns and 89 rows.
+2024-11-09 20:47:30,694 - Error during preprocessing: Found array with 0 sample(s) (shape=(0, 5)) while a minimum of 1 is required by StandardScaler.
+2024-11-09 20:47:30,694 - 127.0.0.1 - - [09/Nov/2024 20:47:30] "[35m[1mPOST /upload HTTP/1.1[0m" 500 -
+2024-11-09 20:47:48,235 - Uploaded file 'uncleaned bike sales data.csv' with 19 columns and 89 rows.
+Preprocessing steps selected: missing_values, outliers
+Missing values found in the following columns: ['Day', 'Age_Group', 'Product_Description', 'Order_Quantity']
+Missing values filled.
+Outliers removed using Z-score method.
+Processed file saved as uncleaned bike sales data_processed.csv
+
+2024-11-09 20:47:48,249 - 127.0.0.1 - - [09/Nov/2024 20:47:48] "POST /upload HTTP/1.1" 200 -
+2024-11-09 20:48:33,478 - 127.0.0.1 - - [09/Nov/2024 20:48:33] "GET / HTTP/1.1" 200 -
+2024-11-09 20:48:42,885 - Uploaded file 'uncleaned bike sales data.csv' with 19 columns and 89 rows.
+Preprocessing steps selected: missing_values
+Missing values found in the following columns: ['Day', 'Age_Group', 'Product_Description', 'Order_Quantity']
+Missing values filled.
+Processed file saved as uncleaned bike sales data_processed.csv
+
+2024-11-09 20:48:42,897 - 127.0.0.1 - - [09/Nov/2024 20:48:42] "POST /upload HTTP/1.1" 200 -
+2024-11-09 20:51:48,944 -  * Detected change in 'C:\\data_preprocessing\\app.py', reloading
+2024-11-09 20:51:50,559 -  * Debugger is active!
+2024-11-09 20:51:50,561 -  * Debugger PIN: 832-437-870
+2024-11-09 20:51:52,112 - 127.0.0.1 - - [09/Nov/2024 20:51:52] "GET / HTTP/1.1" 200 -
+2024-11-09 20:52:01,719 - Uploaded file 'uncleaned bike sales data.csv' with 19 columns and 89 rows.
+Preprocessing steps selected: missing_values, encoding
+Missing values found in the following columns: ['Day', 'Age_Group', 'Product_Description', 'Order_Quantity']
+Missing values filled.
+Encoded categorical columns: ['Date', 'Month', 'Age_Group', 'Customer_Gender', 'Country', 'State', 'Product_Category', 'Sub_Category', 'Product_Description', ' Unit_Cost ', ' Unit_Price ', ' Profit ', ' Cost ', 'Revenue']
+Processed file saved as uncleaned bike sales data_processed.csv
+
+2024-11-09 20:52:01,736 - 127.0.0.1 - - [09/Nov/2024 20:52:01] "POST /upload HTTP/1.1" 200 -
+2024-11-09 20:57:11,291 -  * Detected change in 'C:\\data_preprocessing\\app.py', reloading
+2024-11-09 20:57:13,082 -  * Debugger is active!
+2024-11-09 20:57:13,084 -  * Debugger PIN: 832-437-870
+2024-11-09 20:57:16,492 - 127.0.0.1 - - [09/Nov/2024 20:57:16] "GET / HTTP/1.1" 200 -
+2024-11-09 20:57:38,070 - Uploaded file 'uncleaned bike sales data.csv' with 19 columns and 89 rows.
+2024-11-09 20:57:38,075 - Error during preprocessing: Found array with 0 sample(s) (shape=(0, 5)) while a minimum of 1 is required by StandardScaler.
+2024-11-09 20:57:38,076 - 127.0.0.1 - - [09/Nov/2024 20:57:38] "[35m[1mPOST /upload HTTP/1.1[0m" 500 -
+2024-11-09 20:57:59,611 - 127.0.0.1 - - [09/Nov/2024 20:57:59] "GET / HTTP/1.1" 200 -
+2024-11-09 20:58:10,574 - Uploaded file 'uncleaned bike sales data.csv' with 19 columns and 89 rows.
+2024-11-09 20:58:10,587 - Error during preprocessing: Found array with 0 sample(s) (shape=(0, 5)) while a minimum of 1 is required by StandardScaler.
+2024-11-09 20:58:10,588 - 127.0.0.1 - - [09/Nov/2024 20:58:10] "[35m[1mPOST /upload HTTP/1.1[0m" 500 -
+2024-11-09 21:04:14,129 -  * Detected change in 'C:\\data_preprocessing\\app.py', reloading
